@@ -4,10 +4,8 @@ let gridHeight = document.getElementById('#inputHeight');
 let gridWidth = document.getElementById('#inputWidth');
 let canvas = document.getElementById('#pixelCanvas');
 
- 
 //Make the Grid
 function makeGrid(gridHeight, gridWidth) {
-// Select size input
 size.addEventListener("submit", function (event){
     event.preventDefault()
     makeGrid(gridHeight, gridWidth);
