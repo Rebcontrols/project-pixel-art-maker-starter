@@ -1,33 +1,37 @@
-let size = document.querySelector('sizePicker');
-let changeColor = document.getElementById('#colorPicker');
-let gridHeight = document.getElementById('#inputHeight');
-let gridWidth = document.getElementById('#inputWidth');
-let canvas = document.getElementById('#pixelCanvas');
+let sizePick = document.getElementById('sizePicker');
+let gridColor = document.querySelectorAll('addListener');
+let height = document.getElementById('inputHeight');
+let width = document.getElementById('inputWidth');
+let canvas = document.getElementById('pixelCanvas');
 
-//Make the Grid
-function makeGrid(gridHeight, gridWidth) {
-size.addEventListener("submit", function (event){
-    event.preventDefault()
-    makeGrid(gridHeight, gridWidth);
-});
-
-    canvas.innerHTML = "";
-    //Loop through grid
-    for (let x = 0; x <= gridHeight.height; x++){
+function makeGrid(height, width)
+{
+    for (let x = 0; x < height.value; x++)
+    {
         const gridRow = document.createElement('tr');
-        canvas.appendChild('tr');
-        for (let y = 0; y <= gridWidth.width; y++){ 
+        canvas.appendChild(gridRow); 
+        for (let y = 0; y < width.value; y++)
+        { 
             const gridCell = document.createElement('td');
-            canvas.appendChild('td');
-        }
+            canvas.appendChild(gridCell);
+         }
+     }
+}
+sizePick.addEventListener('submit', function (event)
+{
+    makeGrid(height, width)
+    event.preventDefault();
+})
 
-    }
+//makeGrid(height, width)
 
-canvas.addEventListener('click', function (event){
-    if (event.target.nodeName ==="td") {
-        event.target.style.backgroundColor = changeColor.color;
-    }
-});
-
-    makeGrid.appendChild(gridHeight, gridWidth);
+function addListener()
+{
+    for(var cell of cells)
+    {
+        cell.addEventListener('click', c=>
+        {
+            c.target.style.backgroundColor
+        });
+     }
 }
