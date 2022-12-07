@@ -3,6 +3,7 @@ let height = document.getElementById('inputHeight');
 let width = document.getElementById('inputWidth');
 let canvas = document.getElementById('pixelCanvas');
 
+//Make a grid of any size with colour clicking per cell
 function makeGrid(height, width)
 {
     for (let x = 0; x < height.value; x++)
@@ -19,6 +20,7 @@ function makeGrid(height, width)
 }
 sizePick.addEventListener('submit', function (event)
 {
+    canvas.innerHTML = '';
     makeGrid(height, width)
     event.preventDefault();
     canvas.addEventListener('click', function(event)
